@@ -5,6 +5,8 @@ from .routes.events import blp as events_blp
 from flask_smorest import Api
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
+
 CORS(app, resources={r"/*": {"origins": "*"}})
 app.config["API_TITLE"] = "Event Manager API"
 app.config["API_VERSION"] = "v1"
